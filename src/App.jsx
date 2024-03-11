@@ -3,6 +3,10 @@ import { PlansContext } from './context/plans.context'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import DashboardPage from './pages/Dashboard';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import PlanDetails from './pages/PlanDetails';
+
 
 
 // import plansJSON from '..plans.json';
@@ -20,13 +24,15 @@ import './App.css'
 
   return (
     <div>
+      <NavBar />
         <Routes>
-
           <Route path="/"  element={<DashboardPage plans={plans}/>}/>
-          
+          <Route path='/plans/:planId' element={<PlanDetails />}/>
+          {/* <Route path='/plan' element={<DestinationListPage />}/> */}
         </Routes>
-     
+        <Footer />
     </div>
+  
   )
 }
 
