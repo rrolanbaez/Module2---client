@@ -15,16 +15,49 @@ function PlanDetails() {
 
   return (
     <div className='item-details'>
-    <h1>hi</h1>
-        
+   
+      <div className="plan-card">
 
-      <h2>{plan.location}</h2>
-      {/* <img src={plan.images} alt={plan.location} width="100" height="100" />
-      <p> Name: {plan.placesToVisit.name}{plan.restaurantes.name}</p>
-    // <p> Description: {plan.placesToVisit.description}{plan.restaurantes.description}</p> */}
+
+<h1>Location: {plan.location}</h1>
+
+
+<div>
+    <h2>Places to visit in {plan.location}: </h2>
+    {plan.placesToVisit.map((place) => (
+      <div key={place.id}> {/* Adding a key for list rendering optimization */}
+        <h3>{place.name}</h3>
+        <p>{place.description}</p>
+      
+       {place.images.map((image)=> 
+        <img src={image} alt="placetovisit" />
+       )}
+      </div>
+    ))}
+</div>
+
+<div>
+    <h2>Places to Eat {plan.location}: </h2>   
+    {plan.restaurants.map((place) => (
+      <div key={place.id}> {/* Adding a key for list rendering optimization */}
+        <h3>{place.name}</h3>
+        <p>{place.description}</p>  
+
+        {place.images.map((image) => 
+          <img src={image} alt="placetoeat"/>
+        )}
+      </div>
+    ))}
+</div>
+</div>
 
       </div>
       );
     }
     
     export default PlanDetails; 
+
+
+  
+{/* DANIEL */}
+{/* <p>Places to visist in {plan.location}: {plan.placesToVisit.map((place) => <span>{place.name} {place.description}</span>)}</p> */}

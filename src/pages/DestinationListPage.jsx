@@ -6,9 +6,6 @@ import PlanCard from "../components/PlanCard";
 
 function DestinationListPage () {
 
-
-    
-
     return (
         <div className="DestinationListPage">
             <h1>Location: </h1>
@@ -19,9 +16,10 @@ function DestinationListPage () {
                 })
             }
             </div>
-    
         </div>
     )
 }
+
+
 
 export default DestinationListPage; 
