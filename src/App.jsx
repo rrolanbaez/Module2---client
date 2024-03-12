@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import PlanDetails from "./pages/PlanDetails";
 import HomePage from "./pages/HomePage";
+import IteneraryDetail from "./pages/IteneraryDetail";
 
 // import plansJSON from '..plans.json';
 
@@ -27,6 +28,8 @@ function App() {
         <Route path="/travelguides" element={<DashboardPage plans={plans} />} />
         <Route path="/plans/:planId" element={<PlanDetails />} />
         {/* <Route path='/plan' element={<DestinationListPage />}/> */}
+
+        <Route path='/itinerary-details/:itineraryId' element={<IteneraryDetail />} />
       </Routes>
       <Footer />
     </div>
