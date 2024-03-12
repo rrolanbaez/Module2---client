@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -72,7 +72,7 @@ button:focus-visible {
 
 /*  footer text  */
 
-.footer {
+/* .footer {
   background-color: #303f42;
   color: #fff;
   text-align: center;
@@ -80,4 +80,4 @@ button:focus-visible {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+}  */
