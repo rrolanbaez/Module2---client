@@ -2,7 +2,7 @@ const imgURL = " https://cdn3.vectorstock.com/i/1000x1000/59/42/ecommerce-icon-v
 function HomePage() {
 
   return (
-    <div>
+    <div className="w-">
       <h1>Home</h1>
       <img src={imgURL} alt="home gif" className="page-img" />
     </div>

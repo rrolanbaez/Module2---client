@@ -49,7 +49,7 @@ const PlansProvider = ({ children }) => {
   }, []);
 
   return (
-    <PlansContext.Provider value={{ plans, setPlans, itineraries, getItineraries }}>
+    <PlansContext.Provider value={{ plans, setPlans, itineraries, getItineraries, setItineraries }}>
       {children}
     </PlansContext.Provider>
   );

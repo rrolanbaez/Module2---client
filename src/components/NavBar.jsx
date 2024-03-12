@@ -6,7 +6,10 @@ function NavBar() {
       
         <ul className="navbar-links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/travelguides">Travel Guides</Link></li>
+            <li><Link to="/locations">Locations</Link></li>
+            
+            {/* <li><Link to="/itinerary-details/1">My Itenerary</Link></li> */}
+            <li><Link to="/my-itineraries">My Itineraries</Link></li>
         </ul>
 
     </nav>
