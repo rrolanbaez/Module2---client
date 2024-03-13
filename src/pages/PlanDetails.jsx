@@ -20,23 +20,28 @@ const PlanDetails = () => {
   const navigate = useNavigate();
 
   const handleItinerarySelect = (e, place) => {
-    console.log("This is the value we are adding for itineraryId", e.target.value)
+    console.log(
+      "This is the value we are adding for itineraryId",
+      e.target.value
+    );
     setPlaceToAdd((prev) => ({ ...prev, itineraryId: e.target.value }));
     setPlaceToAdd((prev) => ({ ...prev, place: place }));
     setPlaceToAdd((prev) => ({ ...prev, city: plan.location }));
-    
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
     try {
-      let thisItenerary = await axios.get(`${BACKEND_URL}/itineraries/${placeToAdd.itineraryId}`);
-      
-      console.log("this is the found iteneraryId we are adding to ===>", thisItenerary)
-    
-    
+      let thisItenerary = await axios.get(
+        `${BACKEND_URL}/itineraries/${placeToAdd.itineraryId}`
+      );
+
+      console.log(
+        "this is the found iteneraryId we are adding to ===>",
+        thisItenerary
+      );
+
       let placesVisiting = [
         ...thisItenerary.data.placesWillVisit,
         {
@@ -45,14 +50,19 @@ const PlanDetails = () => {
           place: placeToAdd.place,
         },
       ];
-      let updatedItenerary = await axios.put(BACKEND_URL +
-        "/itineraries" + "/" + placeToAdd.itineraryId,
-        {id: thisItenerary.data.id, iteneraryName: thisItenerary.data.iteneraryName, startDate: thisItenerary.data.startDate, endDate: thisItenerary.data.endDate, placesWillVisit: placesVisiting}
+      let updatedItenerary = await axios.put(
+        BACKEND_URL + "/itineraries" + "/" + placeToAdd.itineraryId,
+        {
+          id: thisItenerary.data.id,
+          iteneraryName: thisItenerary.data.iteneraryName,
+          startDate: thisItenerary.data.startDate,
+          endDate: thisItenerary.data.endDate,
+          placesWillVisit: placesVisiting,
+        }
       );
       console.log("This is the updated Itinerary", updatedItenerary.data);
 
-      
-      getItineraries()
+      getItineraries();
       navigate(`/itinerary-details/${updatedItenerary.data.id}`);
     } catch (err) {
       console.log(err);
@@ -60,9 +70,8 @@ const PlanDetails = () => {
   };
 
   useEffect(() => {
-  
     const thisPlan = plans.find((item) => String(item.id) === String(planId));
-    console.log("This is the found place", thisPlan)
+    console.log("This is the found place", thisPlan);
     setPlan(thisPlan);
   }, [plans]);
 
@@ -92,15 +101,14 @@ const PlanDetails = () => {
                       <form onSubmit={handleSubmit}>
                         <select
                           onChange={(e) => handleItinerarySelect(e, place)}
-
                         >
                           <option>Select Itenerary</option>
                           {itineraries.map((itenerary) => {
-                        
                             return (
-                          <option value={itenerary.id}>
-                           {itenerary.iteneraryName}
-                          </option>);
+                              <option value={itenerary.id}>
+                                {itenerary.iteneraryName}
+                              </option>
+                            );
                           })}
                         </select>
                         <label>
@@ -187,7 +195,9 @@ const PlanDetails = () => {
 
 export default PlanDetails;
 
-
-  
-{/* DANIEL */}
-{/* <p>Places to visist in {plan.location}: {plan.placesToVisit.map((place) => <span>{place.name} {place.description}</span>)}</p> */}
+{
+  /* DANIEL */
+}
+{
+  /* <p>Places to visist in {plan.location}: {plan.placesToVisit.map((place) => <span>{place.name} {place.description}</span>)}</p> */
+}
