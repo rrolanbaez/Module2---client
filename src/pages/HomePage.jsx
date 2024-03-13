@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutPage from './AboutPage';
 
 const imgURL = "https://e0.pxfuel.com/wallpapers/40/826/desktop-wallpaper-puerto-rico-beach-puerto-rico-beach-sunset.jpg";
 
@@ -222,7 +223,10 @@ function HomePage() {
                   <p className="card-text" style={{ textAlign: 'justify' }}>Puerto Rico's history comes alive at every turn. Visit the historic La Fortaleza in Old San Juan, explore the ancient Taino petroglyphs at Caguana Indigenous Ceremonial Park, or wander through the colonial charm of San Germán. With our website, you'll step back in time, discovering the captivating history that shaped Puerto Rico.</p>
                 </div>
               </div>
-            </div> 
+            </div>
+
+
+            <AboutPage></AboutPage> 
 
 
 

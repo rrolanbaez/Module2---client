@@ -5,11 +5,17 @@ import { PlansContext} from "../context/plans.context";
 // We are deconstructing props object directly in the parentheses of the function
 function PlanCard ({ plan }) {
     return (
-      <Link to={`/plans/${plan.id}`}>
-      <div className="plan-card">
+      <Link to={`/plans/${plan.id}`} className="text-decoration-none">
+      <div className="card plan-card m-2" style={{ width: '18rem' }}>
 
-          <h1>Visit {plan.location}</h1>
-          <img src={plan.thumbnail}  alt="mainphoto"  width="700px"/>
+        <img src={plan.thumbnail} className="card-img-top" alt={plan.location} />
+        <div className="card-body">
+              <h5 className="card-title text-center">Visit {plan.location}</h5>
+
+          {/* <h1>Visit {plan.location}</h1>
+          <img src={plan.thumbnail}  alt="mainphoto"  width="700px"/> */}
+
+        </div>
          
 
       </div>
@@ -18,11 +24,4 @@ function PlanCard ({ plan }) {
 }
   
 export default PlanCard;
-
-
-
-
-
-  // {/* DANIEL */}
-  // {/* <p>Places to visist in {plan.location}: {plan.placesToVisit.map((place) => <span>{place.name} {place.description}</span>)}</p> */}
 

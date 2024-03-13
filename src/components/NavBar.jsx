@@ -4,17 +4,24 @@ function NavBar() {
   return (
     <nav className="navbar">
 
+
       <Link to="/">
         <img src="../src/images/coquiLogo.png" alt="logo" style={{height: '115px'}}></img>
       </Link>
       
       <ul className="navbar-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/locations">Locations</Link></li>
-          <li><Link to="/my-itineraries">My Itineraries</Link></li>
+          <li><a1><Link className="btn btn-2" to="/"><strong>Home</strong></Link></a1></li>
+          <li><a1><Link className="btn btn-2"to="/locations"><strong>Locations</strong></Link></a1></li>
+          <li><a1><Link className="btn btn-2"to="/my-itineraries"><strong>My Itineraries</strong></Link></a1></li>
       </ul>
 
     </nav>
   );
 }
 export default NavBar;
+
+
+
+
+
+

@@ -1,8 +1,22 @@
 /* FONTS */
 /* Apply the Ojuju font to body to affect all text */
+
+ /* maybe esto maybe ayuda con el About Page */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/********************/
+
 body {
   font-family: 'Ojuju', sans-serif;
-  font-weight: 400; /* Default weight, can adjust as needed */
+  font-weight: 400;
 }
 
 /* Example of a specific class using Ojuju with a unique identifier and weight */
@@ -63,7 +77,7 @@ h1 {
 }
 
 .navbar ul li a:hover, .navbar ul li a:focus {
-  color: #000; /* Changes link color on hover/focus for better interactivity */
+  color: #32e7c8; /* Changes link color on hover/focus for better interactivity */
   text-decoration: none; /* Optional: Removes underline on hover/focus */
 }
 
@@ -188,3 +202,162 @@ h1 {
 
 
 
+/* About Page */
+.AboutPage {
+  position: relative;
+  overflow: hidden;
+  /* height: 100vh;  */
+  width: 100vw; 
+  z-index: 1; 
+}
+
+.background-blur {
+  position: absolute; /* Absolute position to stay behind the content */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-image: url(https://scubapro.johnsonoutdoors.com/sites/default/files/2022-09/puerto-rico-20210721.jpg); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); /* The blur effect */
+  z-index: -1; /* Keeps the background behind the content */
+}
+
+.content-about {
+  position: relative; /* Needed to lift the content above the background */
+  z-index: 1; /* Higher index to be above the pseudo-element */
+  font-family: sans-serif;
+}
+
+.text-center {
+  z-index: 1;
+}
+
+.card.about-card {
+  min-height: 70px; /* Adjust based on your content to ensure uniform size */
+  width: 35vh;
+  display: center;
+  border-radius: 15px; /* Adjust as needed for roundness */
+  overflow: hidden; /* Ensures the blur doesn't leak outside the border */
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Extra blurriness inside the card */
+}
+
+.main-image {
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bg-custom {
+  background-color: #a7e351; /* Example: bright yellow background as in your sample image */
+}
+
+.small-image-container {
+  margin-top: 10px; /* Spacing above the small images */
+}
+
+.small-image {
+  width: 30px;
+  height: 30px; 
+  margin: 0 5px; /* Spacing between small images */
+}
+
+
+
+
+
+/* boton de navbar */
+
+
+a1 {
+  border-bottom: 1px solid;
+  color: white;
+  line-height: 1.4;
+  padding: .25em;
+  text-decoration: none;
+  
+  &:hover {
+    color: 	#32e7c8;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  font-size:16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px; 
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%; 
+}
+
+&:hover { text-decoration: none; }
+
+.btn-2 {
+  letter-spacing: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+backface-visibility: hidden;
+border: 1px solid rgba(#fff, 0);
+bottom: 0px;
+content: " ";
+display: block;
+margin: 0 auto;
+position: relative;
+transition: all 280ms ease-in-out;
+width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+backface-visibility: hidden;
+border-color: #fff;
+transition: width 350ms ease-in-out;
+width: 70%;
+}
+
+.btn-2:hover:before {
+bottom: auto;
+top: 0;
+width: 70%;
+}
+
+
+/* Dashboard + PlanCard: Donde se ve la lista de los Pueblos  */
+.plan-card {
+  /* Custom styles for plan cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Animation on hover */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+.plan-card:hover {
+  transform: scale(1.05); /* Slightly enlarge cards on hover */
+}
+
+.plan-card img {
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensures images cover the area */
+}
+
+.plan-card h5 {
+  color: #000; /* Text color */
+}
