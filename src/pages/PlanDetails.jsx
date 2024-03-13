@@ -37,10 +37,7 @@ const PlanDetails = () => {
         `${BACKEND_URL}/itineraries/${placeToAdd.itineraryId}`
       );
 
-      console.log(
-        "this is the found iteneraryId we are adding to ===>",
-        thisItenerary
-      );
+      console.log("this is the found iteneraryId we are adding to ===>", thisItenerary);
 
       let placesVisiting = [
         ...thisItenerary.data.placesWillVisit,
@@ -50,6 +47,7 @@ const PlanDetails = () => {
           place: placeToAdd.place,
         },
       ];
+
       let updatedItenerary = await axios.put(
         BACKEND_URL + "/itineraries" + "/" + placeToAdd.itineraryId,
         {
@@ -87,7 +85,6 @@ const PlanDetails = () => {
               {plan.placesToVisit.map((place) => (
                 <div key={place.id}>
                   {" "}
-                  {/* Adding a key for list rendering optimization */}
                   <h3>{place.name}</h3>
                   <p>{place.description}</p>
                   {place.images.map((image) => (
@@ -96,6 +93,7 @@ const PlanDetails = () => {
                   <button onClick={() => setIsAdding(true)}>
                     Add to Itinerary
                   </button>
+
                   {isAdding && (
                     <>
                       <form onSubmit={handleSubmit}>
@@ -104,6 +102,7 @@ const PlanDetails = () => {
                         >
                           <option>Select Itenerary</option>
                           {itineraries.map((itenerary) => {
+
                             return (
                               <option value={itenerary.id}>
                                 {itenerary.iteneraryName}
@@ -111,6 +110,7 @@ const PlanDetails = () => {
                             );
                           })}
                         </select>
+
                         <label>
                           Date
                           <input
@@ -141,7 +141,6 @@ const PlanDetails = () => {
               {plan.restaurants.map((place) => (
                 <div key={place.id}>
                   {" "}
-                  {/* Adding a key for list rendering optimization */}
                   <h3>{place.name}</h3>
                   <p>{place.description}</p>
                   {place.images.map((image) => (
@@ -150,6 +149,7 @@ const PlanDetails = () => {
                   <button onClick={() => setIsAdding(true)}>
                     Add to Itinerary
                   </button>
+
                   {isAdding && (
                     <>
                       <form onSubmit={handleSubmit}>
@@ -162,6 +162,7 @@ const PlanDetails = () => {
                             </option>;
                           })}
                         </select>
+
                         <label>
                           Date
                           <input
@@ -195,9 +196,3 @@ const PlanDetails = () => {
 
 export default PlanDetails;
 
-{
-  /* DANIEL */
-}
-{
-  /* <p>Places to visist in {plan.location}: {plan.placesToVisit.map((place) => <span>{place.name} {place.description}</span>)}</p> */
-}

@@ -30,26 +30,52 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #4F6367;
-  padding: 10px;
+  background-color: #f29d46;
+  padding: 5px 10px;
   z-index: 200; /* Increased z-index to be above the sidebar */
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds subtle shadow for depth */
+  transition: padding 0.5s ease; /* Smooth transition for padding changes (e.g., on scroll) */
 }
 
 .navbar ul {
   margin: 0;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
+  padding: 0 20px;
   display: flex;
+  align-items: center;
 }
 
 .navbar ul li {
   list-style: none;
-  margin: 0 20px;
-  transition: 0.5s;
+  margin: 0 15px;
+  transition: color 0.5s ease;
 }
+
+.navbar ul li a {
+  color: #fff; /* Sets default link color */
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s ease; /* Smooth transition for link color changes */
+}
+
+.navbar ul li a:hover, .navbar ul li a:focus {
+  color: #000; /* Changes link color on hover/focus for better interactivity */
+  text-decoration: none; /* Optional: Removes underline on hover/focus */
+}
+
+/* Optional: Change the navbar's padding on scroll for a dynamic effect */
+/* You would need to add some JavaScript to toggle a class on the navbar based on scroll position */
+.navbar.scrolled {
+  padding: 2px 10px;
+}
+
+
+
+
 
 /* footer */
 .footer {
@@ -102,14 +128,20 @@ h1 {
 }
 
 .content {
-  padding: 20px;
+  padding: 100px;
+  background-color: #32e7c8;
 }
 
-/* Additional styling for content below the image */
-.content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+.content h1 {
+  font-size: 50px;
 }
+
+.content p { /* Additional styling for content below the image Home */
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  margin-top: 3%;
+}
+
 
 /* p under h1: Coqui Compass */
 .centered-text {
@@ -127,6 +159,31 @@ h1 {
   font-family: 'Ojuju', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400; /* Example weight, can adjust */
+}
+
+
+/* HOME PAGE CARDS */
+.custom-card {
+  min-height: 610px; /* Adjust based on your content to ensure uniform size */
+  max-height: 610px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+
+.custom-card-img-top {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border: 15px solid white;
+  /* border-radius: 35px; */
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
 }
 
 
