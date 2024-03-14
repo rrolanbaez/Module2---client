@@ -74,123 +74,140 @@ const PlanDetails = () => {
   }, [plans]);
 
   return (
-    <div className="item-details">
-      <div className="plan-card">
+    <div className="item-details container mt-5">
+      <div className="plan-card plan-details">
         {plan && (
           <>
-            <h1>Location: {plan.location}</h1>
 
-            <div>
-              <h2>Places to visit in {plan.location}: </h2>
-              {plan.placesToVisit.map((place) => (
-                <div key={place.id}>
-                  {" "}
-                  <h3>{place.name}</h3>
-                  <p>{place.description}</p>
-                  {place.images.map((image) => (
-                    <img src={image} alt="placetovisit" />
-                  ))}
-                  <button onClick={() => setIsAdding(true)}>
-                    Add to Itinerary
-                  </button>
 
-                  {isAdding && (
-                    <>
-                      <form onSubmit={handleSubmit}>
-                        <select
-                          onChange={(e) => handleItinerarySelect(e, place)}
-                        >
-                          <option>Select Itenerary</option>
-                          {itineraries.map((itenerary) => {
+                                                                                     {/* arreglar scroll up, zoom hover y css */}
 
-                            return (
-                              <option value={itenerary.id}>
-                                {itenerary.iteneraryName}
-                              </option>
-                            );
-                          })}
-                        </select>
+            <div className="card mb-3">
+              <div className="card-body">
+                <div>
+                  <h1>Places to visit in {plan.location}: </h1> 
+                  {plan.placesToVisit.map((place) => (
+                    <div key={place.id} className="mb-3">
+                      {" "}
+                      <h3>{place.name}</h3>
+                      <p>{place.description}</p>
+                      {place.images.map((image) => (
+                        <img src={image} alt="placetovisit" className="img-fluid"/>
+                    ))}
+                    <button className="btn btn-primary mt-2" onClick={() => setIsAdding(true)}>
+                      Add to Itinerary
+                    </button>   
 
-                        <label>
-                          Date
-                          <input
-                            type="datetime-local"
-                            name="date"
-                            id="date"
-                            onChange={(e) =>
-                              setPlaceToAdd((prev) => ({
-                                ...prev,
-                                date: e.target.value,
-                              }))
-                            }
-                          />
-                        </label>
+                    {isAdding && (
+                      <>
+                        <form onSubmit={handleSubmit} className="mt-3">
+                          <div className="mb-3">
+                            <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
+                              <option>Select Itenerary</option>
+                              {itineraries.map((itenerary) => {
+                                return (
+                                  <option value={itenerary.id}>
+                                    {itenerary.iteneraryName}
+                                  </option>
+                                );
+                              })}
+                            </select>
+                          </div>
 
-                        <button type="submit">Add to Itenerary</button>
-                      </form>
+                          <div className="mb-3">
+                            <label htmlFor="date" className="form-label">
+                              Date
+                                <input
+                                  type="datetime-local"
+                                  className="form-control"
+                                  name="date"
+                                  id="date"
+                                  onChange={(e) =>
+                                    setPlaceToAdd((prev) => ({
+                                      ...prev,
+                                      date: e.target.value,
+                                    }))
+                                  }
+                                />
+                            </label>
+                          </div>
 
-                      <button onClick={() => setIsAdding(false)}>Cancel</button>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
+                            <button type="submit" className="btn btn-success">Add to Itenerary</button>
+                        
+                        </form>
 
-            <div>
-              <h2>Places to Eat {plan.location}: </h2>
-              {plan.restaurants.map((place) => (
-                <div key={place.id}>
-                  {" "}
-                  <h3>{place.name}</h3>
-                  <p>{place.description}</p>
-                  {place.images.map((image) => (
-                    <img src={image} alt="placetoeat" />
-                  ))}
-                  <button onClick={() => setIsAdding(true)}>
-                    Add to Itinerary
-                  </button>
+                        <button type="button" className="btn btn-secondary ms-2" onClick={() => setIsAdding(false)}>Cancel</button>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-                  {isAdding && (
-                    <>
-                      <form onSubmit={handleSubmit}>
-                        <select
-                          onChange={(e) => handleItinerarySelect(e, place)}
-                        >
-                          {itineraries.map((itenerary) => {
-                            <option value={itenerary.id}>
-                              {itenerary.name}
-                            </option>;
-                          })}
-                        </select>
+              <div>
+                <h2>Places to Eat {plan.location}: </h2> </div>
+                {plan.restaurants.map((place) => (
+                  <div key={place.id}className="mb-3">
+                    {" "}
+                    <h3>{place.name}</h3>
+                    <p>{place.description}</p>
+                    {place.images.map((image) => (
+                      <img src={image} alt="placetoeat" className="img-fluid"/>
+                    ))}
+                    <button className="btn btn-primary mt-2" onClick={() => setIsAdding(true)}>
+                      Add to Itinerary
+                    </button>
 
-                        <label>
-                          Date
-                          <input
-                            type="datetime"
-                            name="date"
-                            id="date"
-                            onChange={(e) =>
-                              setPlaceToAdd((prev) => ({
-                                ...prev,
-                                date: e.target.value,
-                              }))
-                            }
-                          />
-                        </label>
 
-                        <button type="submit">Add to Itenerary</button>
-                      </form>
+                    {isAdding && (
+                      <>
+                        <form onSubmit={handleSubmit} className="mt-3">
+                          <div className="mb-3">
+                            <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
+                            <option>Select Itenerary</option>
+                              {itineraries.map((itenerary) => {
+                                  return (
+                                    <option value={itenerary.id}>
+                                      {itenerary.iteneraryName}
+                                    </option>
+                                  );
+                                })}
+                            </select>
+                          </div>
 
-                      <button onClick={() => setIsAdding(false)}>Cancel</button>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
+                          <div className="mb-3">
+                            <label htmlFor="date" className="form-label">
+                              Date
+                              <input
+                                type="datetime-local"
+                                className="form-control"
+                                name="date"
+                                id="date"
+                                onChange={(e) =>
+                                  setPlaceToAdd((prev) => ({
+                                    ...prev,
+                                    date: e.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                          </div>
+
+                          <button type="submit" className="btn btn-success">Add to Itenerary</button>
+                        
+                        </form>
+
+                        <button type="button" className="btn btn-secondary ms-2" onClick={() => setIsAdding(false)}>Cancel</button>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+              </div>
+            
           </>
         )}
+        </div>
       </div>
-    </div>
   );
 };
 

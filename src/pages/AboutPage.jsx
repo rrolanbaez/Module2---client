@@ -41,6 +41,11 @@ const allImages = [
   },
 ];
 
+
+//////////////// arreglar imagen de fondo blur///////
+
+
+
 function AboutPage() {
     return (
       <div className="AboutPage">
