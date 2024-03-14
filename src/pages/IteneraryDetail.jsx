@@ -68,29 +68,28 @@ const IteneraryDetail = () => {
   }, [itineraries]);
 
   return (
-    <div>
+    <div className="container mt-5 d-flex justify-content-center">
       {thisItinerary && (
-        <div>
-          <h2>{thisItinerary.iteneraryName}</h2>
-          <p>{thisItinerary.startDate}</p>
-          <p>{thisItinerary.endDate}</p>
+        <div className="card text-center" style={{ width: "18rem" }}>
+          <h1>{thisItinerary.iteneraryName}</h1>
+          <p>{thisItinerary.startDate} ~ {thisItinerary.endDate}</p>
 
           <button
-        type="button"
-        className="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Edit Itenerary Details
-      </button>
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Edit Itinerary Details
+          </button>
 
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => deleteItinerary(thisItinerary.id)}
-      >
-        Delete Itinerary
-      </button>
+          <button
+            type="button"
+            className="btn btn-outline-danger"
+            onClick={() => deleteItinerary(thisItinerary.id)}
+          >
+            Delete Itinerary
+          </button>
 
       <div
         className="modal fade"
@@ -179,7 +178,7 @@ const IteneraryDetail = () => {
                         <div>
                           
                           <h3>{place.place.name}</h3>        
-                          <button onClick={() => removeFromItinerary(index)}>Remove from Itinerary</button>
+                          <button className="btn btn-outline-warning" onClick={() => removeFromItinerary(index)}>Remove from Itinerary</button>
                         </div>
                       )
                     })
@@ -201,4 +200,4 @@ const IteneraryDetail = () => {
 
 export default IteneraryDetail;
 
-// placesWillVisit
+

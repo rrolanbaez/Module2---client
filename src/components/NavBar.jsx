@@ -6,7 +6,7 @@ function NavBar() {
 
 
       <Link to="/">
-        <img src="../src/images/coquiLogo.png" alt="logo" style={{height: '115px'}}></img>
+        <img src="../src/images/coquiLogo2.png" alt="logo" style={{height: '115px'}}></img>
       </Link>
       
       <ul className="navbar-links">
