@@ -74,49 +74,112 @@ const PlanDetails = () => {
   }, [plans]);
 
   return (
-    <div className="item-details container mt-5">
+    <div className="item-details container mt-5 ">
       <div className="plan-card plan-details">
         {plan && (
           <>
 
-
-                                                                                     {/* arreglar scroll up, zoom hover y css */}
-
+{/* arreglar scroll up de cuando add to itinerary y css */}
             <div className="card mb-3">
               <div className="card-body">
                 <div>
                   <h1>Places to visit in {plan.location}: </h1> 
                   {plan.placesToVisit.map((place) => (
-                    <div key={place.id} className="mb-3">
+                    <div key={place.id} className="mb-3 text-center">
                       {" "}
                       <h3>{place.name}</h3>
                       <p>{place.description}</p>
-                      {place.images.map((image) => (
-                        <img src={image} alt="placetovisit" className="img-fluid"/>
-                    ))}
-                    <button className="btn btn-primary mt-2" onClick={() => setIsAdding(true)}>
-                      Add to Itinerary
-                    </button>   
-
-                    {isAdding && (
+                      <div className="images-container">
+                        {place.images.map((image) => (
+                          <img src={image} alt="placetovisit" className="uniforme-img"/>
+                        ))}
+                      </div>
+                      <div className="text-center">
+                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setIsAdding(true)}>
+                          Add to Itinerary
+                        </button>
+                      </div>
+                      
+                      {isAdding && (
                       <>
                         <form onSubmit={handleSubmit} className="mt-3">
-                          <div className="mb-3">
-                            <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
-                              <option>Select Itenerary</option>
-                              {itineraries.map((itenerary) => {
-                                return (
-                                  <option value={itenerary.id}>
-                                    {itenerary.iteneraryName}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                          </div>
+                            <div className="mb-3">
+                              <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
+                                <option>Select Itenerary</option>
+                                {itineraries.map((itenerary) => {
+                                  return (
+                                    <option value={itenerary.id}>
+                                      {itenerary.iteneraryName}
+                                    </option>
+                                  );
+                                })}
+                              </select>
+                            </div>
 
-                          <div className="mb-3">
-                            <label htmlFor="date" className="form-label">
-                              Date
+                            <div className="mb-3">
+                              <label htmlFor="date" className="form-label">
+                                Date
+                                  <input
+                                    type="datetime-local"
+                                    className="form-control"
+                                    name="date"
+                                    id="date"
+                                    onChange={(e) =>
+                                      setPlaceToAdd((prev) => ({
+                                        ...prev,
+                                        date: e.target.value,
+                                      }))
+                                    }
+                                  />
+                              </label>
+                            </div>
+
+                              <button type="submit" className="btn custom-btn mt-2" style={{ backgroundColor: '#2ace82', color: 'white' }}>Add to Itenerary</button>
+                          </form>
+                          <button type="button" className="btn btn-outline-danger" onClick={() => setIsAdding(false)}>Cancel</button>
+                      </>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div>
+                  <h1>Places to Eat in {plan.location}: </h1>
+                  {plan.restaurants.map((place) => (
+                    <div key={place.id} className="mb-3 text-center">
+                      {" "}
+                      <h3>{place.name}</h3>
+                      <p>{place.description}</p>
+                      <div className="images-container">
+                        {place.images.map((image) => (
+                          <img src={image} alt="placetoeat" className="uniforme-img"/>
+                        ))}
+                      </div>
+                      <div className="text-center">
+                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setIsAdding(true)}>
+                          Add to Itinerary
+                        </button>
+                      </div>
+
+                      {isAdding && (
+                        <>
+                          <form onSubmit={handleSubmit} className="mt-3">
+                            <div className="mb-3">
+                              <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
+                              <option>Select Itenerary</option>
+                                {itineraries.map((itenerary) => {
+                                    return (
+                                      <option value={itenerary.id}>
+                                        {itenerary.iteneraryName}
+                                      </option>
+                                    );
+                                  })}
+                              </select>
+                            </div>
+
+                            <div className="mb-3">
+                              <label htmlFor="date" className="form-label">
+                                Date
                                 <input
                                   type="datetime-local"
                                   className="form-control"
@@ -129,85 +192,22 @@ const PlanDetails = () => {
                                     }))
                                   }
                                 />
-                            </label>
-                          </div>
-
-                            <button type="submit" className="btn btn-success">Add to Itenerary</button>
-                        
-                        </form>
-
-                        <button type="button" className="btn btn-secondary ms-2" onClick={() => setIsAdding(false)}>Cancel</button>
-                      </>
-                    )}
-                  </div>
-                ))}
+                              </label>
+                            </div>
+                            <button type="submit" className="btn custom-btn mt-2" style={{ backgroundColor: '#2ace82', color: 'white' }}>Add to Itenerary</button>
+                          </form>
+                          <button type="button" className="btn btn-outline-danger" onClick={() => setIsAdding(false)}>Cancel</button>
+                        </>
+                      )}
+                    </div>
+                  ))}
               </div>
-
-              <div>
-                <h2>Places to Eat {plan.location}: </h2> </div>
-                {plan.restaurants.map((place) => (
-                  <div key={place.id}className="mb-3">
-                    {" "}
-                    <h3>{place.name}</h3>
-                    <p>{place.description}</p>
-                    {place.images.map((image) => (
-                      <img src={image} alt="placetoeat" className="img-fluid"/>
-                    ))}
-                    <button className="btn btn-primary mt-2" onClick={() => setIsAdding(true)}>
-                      Add to Itinerary
-                    </button>
-
-
-                    {isAdding && (
-                      <>
-                        <form onSubmit={handleSubmit} className="mt-3">
-                          <div className="mb-3">
-                            <select className="form-select" onChange={(e) => handleItinerarySelect(e, place)}>
-                            <option>Select Itenerary</option>
-                              {itineraries.map((itenerary) => {
-                                  return (
-                                    <option value={itenerary.id}>
-                                      {itenerary.iteneraryName}
-                                    </option>
-                                  );
-                                })}
-                            </select>
-                          </div>
-
-                          <div className="mb-3">
-                            <label htmlFor="date" className="form-label">
-                              Date
-                              <input
-                                type="datetime-local"
-                                className="form-control"
-                                name="date"
-                                id="date"
-                                onChange={(e) =>
-                                  setPlaceToAdd((prev) => ({
-                                    ...prev,
-                                    date: e.target.value,
-                                  }))
-                                }
-                              />
-                            </label>
-                          </div>
-
-                          <button type="submit" className="btn btn-success">Add to Itenerary</button>
-                        
-                        </form>
-
-                        <button type="button" className="btn btn-secondary ms-2" onClick={() => setIsAdding(false)}>Cancel</button>
-                      </>
-                    )}
-                  </div>
-                ))}
-              </div>
-              </div>
-            
+            </div>
+          </div>
           </>
         )}
-        </div>
       </div>
+    </div>
   );
 };
 

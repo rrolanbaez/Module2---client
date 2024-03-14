@@ -9,12 +9,9 @@ function PlanCard ({ plan }) {
       <div className="card plan-card m-2" style={{ width: '18rem' }}>
 
         <img src={plan.thumbnail} className="card-img-top" alt={plan.location} />
+        
         <div className="card-body">
               <h5 className="card-title text-center">Visit {plan.location}</h5>
-
-          {/* <h1>Visit {plan.location}</h1>
-          <img src={plan.thumbnail}  alt="mainphoto"  width="700px"/> */}
-
         </div>
          
 

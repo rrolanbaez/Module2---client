@@ -3,8 +3,8 @@ function Footer() {
      <div className="footer">
       
       <p>Made with 💙 by Roxangélica Rolán and Naiomy Figueroa</p>
-      <a href='https://github.com/rrolanbaez/module2-client' target="_blank" className='footer-img'>      
-       <img src='src/images/github-mark.svg' />
+      <a href='https://github.com/rrolanbaez/module2-client' target="_blank" className='footer-img' rel="noopener noreferrer">      
+       <img src="src/images/github-mark.svg"/>
       </a>
         
   </div>
