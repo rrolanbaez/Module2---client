@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import navimg from "../images/coquiLogo2.png";
 
 function NavBar() {
   return (
@@ -6,7 +7,7 @@ function NavBar() {
 
 
       <Link to="/">
-        <img src="../src/images/coquiLogo2.png" alt="logo" style={{height: '115px'}}></img>
+        <img src={navimg} alt="logo" style={{height: '115px'}}></img>
       </Link>
       
       <ul className="navbar-links">

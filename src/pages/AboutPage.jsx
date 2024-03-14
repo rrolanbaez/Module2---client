@@ -1,20 +1,25 @@
 import React from "react";
 
+import naiomypic from "../images/naiomycartoon.png"
+import roxpic from "../images/roxcartoon.png"
+import gitHubpic from "../images/github-mark.svg"
+import linkedInpic from "../images/linkedin-logo.png"
+
 const allImages = [
   {
     name: "Roxangélica Rolán",
     mainImage: {
-      url: "src/images/roxcartoon.png",  
+      url: roxpic,  
       alt: "Roxangelica Pic",
     },
     smallImages: [
       {
-        img: "src/images/github-mark.svg",
+        img: gitHubpic,
         alt: "GitHub",
         link: "https://github.com/rrolanbaez",
       },
       {
-        img: "src/images/linkedin-logo.png",
+        img: linkedInpic,
         alt: "LinkedIn",
         link: "https://www.linkedin.com/in/roxangelicarolan/",
       },
@@ -23,17 +28,17 @@ const allImages = [
   {
     name: "Naiomy Figueroa",
     mainImage: {
-      url: "src/images/naiomycartoon.png",
+      url: naiomypic,
       alt: "Naiomy Pic",
     },
     smallImages: [
       {
-        img: "src/images/github-mark.svg",
+        img: gitHubpic,
         alt: "GitHub",
         link: "https://github.com/nfigueroa1231",
       },
       {
-        img: "src/images/linkedin-logo.png",
+        img: linkedInpic,
         alt: "LinkedIn",
         link: "https://www.linkedin.com/in/naiomyfigueroa/",
       },
