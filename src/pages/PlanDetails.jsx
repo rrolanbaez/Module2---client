@@ -6,7 +6,8 @@ import axios from "axios";
 
 const PlanDetails = () => {
   const [plan, setPlan] = useState(null);
-  const [isAdding, setIsAdding] = useState(false);
+  const [addPlace, setAddPlace] = useState({adding: false, i: null});
+  const [addRestaurant, setAddRestaurant] = useState({adding: false, i: null});
   const { planId } = useParams();
   const { plans, itineraries, getItineraries } = useContext(PlansContext);
 
@@ -78,13 +79,11 @@ const PlanDetails = () => {
       <div className="plan-card plan-details">
         {plan && (
           <>
-
-{/* arreglar scroll up de cuando add to itinerary y css */}
             <div className="card mb-3">
               <div className="card-body">
                 <div>
                   <h1>Places to visit in {plan.location}: </h1> 
-                  {plan.placesToVisit.map((place) => (
+                  {plan.placesToVisit.map((place, i) => (
                     <div key={place.id} className="mb-3 text-center">
                       {" "}
                       <h3>{place.name}</h3>
@@ -95,12 +94,12 @@ const PlanDetails = () => {
                         ))}
                       </div>
                       <div className="text-center">
-                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setIsAdding(true)}>
+                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setAddPlace( {adding: true, i: i})}>
                           Add to Itinerary
                         </button>
                       </div>
                       
-                      {isAdding && (
+                      {addPlace.adding && i === addPlace.i && (
                       <>
                         <form onSubmit={handleSubmit} className="mt-3">
                             <div className="mb-3">
@@ -136,7 +135,7 @@ const PlanDetails = () => {
 
                               <button type="submit" className="btn custom-btn mt-2" style={{ backgroundColor: '#2ace82', color: 'white' }}>Add to Itenerary</button>
                           </form>
-                          <button type="button" className="btn btn-outline-danger" onClick={() => setIsAdding(false)}>Cancel</button>
+                          <button type="button" className="btn btn-outline-danger" onClick={() => setAddPlace({adding: false, i: null})}>Cancel</button>
                       </>
                       )}
                     </div>
@@ -145,7 +144,7 @@ const PlanDetails = () => {
 
                 <div>
                   <h1>Places to Eat in {plan.location}: </h1>
-                  {plan.restaurants.map((place) => (
+                  {plan.restaurants.map((place, i) => (
                     <div key={place.id} className="mb-3 text-center">
                       {" "}
                       <h3>{place.name}</h3>
@@ -156,12 +155,12 @@ const PlanDetails = () => {
                         ))}
                       </div>
                       <div className="text-center">
-                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setIsAdding(true)}>
+                        <button className="btn custom-btn mt-2" style={{ backgroundColor: '#f29d46', color: 'white' }} onClick={() => setAddRestaurant({adding: true, i: i})}>
                           Add to Itinerary
                         </button>
                       </div>
 
-                      {isAdding && (
+                      {addRestaurant.adding && addRestaurant.i === i && (
                         <>
                           <form onSubmit={handleSubmit} className="mt-3">
                             <div className="mb-3">
@@ -196,7 +195,7 @@ const PlanDetails = () => {
                             </div>
                             <button type="submit" className="btn custom-btn mt-2" style={{ backgroundColor: '#2ace82', color: 'white' }}>Add to Itenerary</button>
                           </form>
-                          <button type="button" className="btn btn-outline-danger" onClick={() => setIsAdding(false)}>Cancel</button>
+                          <button type="button" className="btn btn-outline-danger" onClick={() => setAddRestaurant({adding: false, i : null})}>Cancel</button>
                         </>
                       )}
                     </div>

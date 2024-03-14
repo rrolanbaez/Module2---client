@@ -42,15 +42,10 @@ const allImages = [
 ];
 
 
-//////////////// arreglar imagen de fondo blur///////
-
-
-
 function AboutPage() {
     return (
       <div className="AboutPage">
         <div className="background-blur"></div> 
-        {/* <div className="container mt-5"> */}
         <div className="content-about">
           <h1 className="text-center" style={{ paddingTop: '30px', fontFamily: 'sans-serif' }}> Meet our Members!</h1>
             <div className="row justify-content-center">

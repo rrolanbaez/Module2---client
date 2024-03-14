@@ -71,7 +71,7 @@ function HomePage() {
                   </button>
                 </div>
 
-                <div className="card-body">
+                <div className="card-body" style={{backgroundColor: '#2ACE82'}}>
                   <h3 className="card-title mb-3">Indulge in Culinary Delights</h3>
                   <p className="card-text" style={{ textAlign: 'justify' }}>Savor the diverse flavors of Puerto Rican cuisine as you explore the island's culinary landscape. From seaside seafood shacks to hidden gems serving traditional favorites, our app guides you to the best restaurants. Immerse yourself in the local gastronomy, making every meal a delicious part of your Puerto Rican adventure.</p>
                 </div>
@@ -118,7 +118,7 @@ function HomePage() {
                   </button>
                 </div>
 
-                <div className="card-body">
+                <div className="card-body" style={{backgroundColor: '#a7e351'}}>
                 <h3 className="card-title mb-3">Uncover Cultural Treasures in Museums</h3>
                 <p className="card-text" style={{ textAlign: 'justify' }}>Immerse yourself in Puerto Rico's rich history and art scene by exploring its museums. From the Ponce Art Museum, showcasing Puerto Rican and European art, to historical artifacts at La Casa del Rey in Old San Juan, our app directs you to cultural hubs that tell the captivating stories of the island's past.</p>
                 </div>
@@ -169,7 +169,7 @@ function HomePage() {
                  
                 </div>
 
-                <div className="card-body">
+                <div className="card-body" style={{backgroundColor: '#7df2ea'}}>
                   <h3 className="card-title mb-3">Relax on Pristine Beaches</h3>
                   <p className="card-text" style={{ textAlign: 'justify' }}>Picture yourself on the golden sands of Luquillo Beach, feel the gentle breeze at Balneario Monserrate, or discover hidden coves off the beaten path. Our app is your ticket to the most breathtaking beaches in Puerto Rico. Dive into crystal-clear waters, soak up the sun, and experience the magic of the Caribbean shoreline.</p>
                 </div>
@@ -218,20 +218,16 @@ function HomePage() {
                  
                 </div>
 
-                <div className="card-body">
+                <div className="card-body" style={{backgroundColor: '#32e7c8'}}>
                   <h3 class="card-title mb-3">Step Back in Time at Historical Places</h3>
                   <p className="card-text" style={{ textAlign: 'justify' }}>Puerto Rico's history comes alive at every turn. Visit the historic La Fortaleza in Old San Juan, explore the ancient Taino petroglyphs at Caguana Indigenous Ceremonial Park, or wander through the colonial charm of San Germán. With our website, you'll step back in time, discovering the captivating history that shaped Puerto Rico.</p>
                 </div>
               </div>
             </div>
-
-
-            <AboutPage></AboutPage> 
-
-
-
           </div>
         </div>
+
+        <AboutPage></AboutPage> 
     </div>
 
   );

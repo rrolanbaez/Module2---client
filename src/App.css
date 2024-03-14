@@ -1,19 +1,3 @@
-/* FONTS */
-/* Apply the Ojuju font to body to affect all text */
-
- /* maybe esto maybe ayuda con el About Page */
-/* html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-/* *, *::before, *::after {
-  box-sizing: border-box;
-} */
-/********************/
-
 body {
   font-family: 'Ojuju', sans-serif;
   font-weight: 400;
@@ -35,10 +19,7 @@ h1 {
 
 
 
-
-
-
-/* navbar style */
+/* NAVBAR style */
 .navbar {
   position: fixed;
   top: 0;
@@ -55,7 +36,6 @@ h1 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds subtle shadow for depth */
   transition: padding 0.5s ease; /* Smooth transition for padding changes (e.g., on scroll) */
 }
-
 
 .navbar ul {
   margin: 0;
@@ -88,205 +68,8 @@ h1 {
   padding: 2px 10px;
 }
 
-
-
-
-
-/* FOOTER */
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f29d46;
-  position: static; 
-  width: 100%;
-
-
-  /* new */
-  padding: 10px 50px;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box; 
-}
-
-.footer p {
-  margin-left: 250px; /* Removes default margin */
-  text-align: center; /* Ensures the text is centered */
-  flex: 1; /* Allows the paragraph to take up the available space, aiding in centering */
-
-  /* new */
-  color: white;
-}
-
-.footer-img img {
-  max-width: 40px; /* Adjusts the image size */
-  height: auto; /* Maintains the aspect ratio of the image */
-  float: right; /* Aligns the image to the right */
-}
-
-
-
-
-/* HOME PAGE */
-.img-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Make the image container fill the viewport */
-}
-
-.page-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover the container without losing aspect ratio */
-  filter: blur(6px); /* Apply a blur effect */
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #f29d46; /* Ensure the text stands out */
-  font-size: 6em; /* Example size, adjust as needed */
-  z-index: 1; /* Make sure the text is above the blurred image */
-}
-
-.content {
-  padding: 100px;
-  background-color: #32e7c8;
-}
-
-.content h1 {
-  font-size: 50px;
-}
-
-.content p { /* Additional styling for content below the image Home */
-  font-size: 1.4em;
-  margin-bottom: 20px;
-  margin-top: 3%;
-}
-
-
-/* p under h1: Coqui Compass */
-.centered-text {
-  position: absolute;
-  top: 60%; /* Adjust this value as needed to position below the h1 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; /* Ensure the text aligns well */
-  text-align: center; /* Center the text horizontally */
-  color: white; /* Set font color to white */
-  font-size: 1.4rem; /* Adjust the font size as needed */
-}
-
-.ojuju-custom {
-  font-family: 'Ojuju', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Example weight, can adjust */
-}
-
-
-/* HOME PAGE CARDS */
-.custom-card {
-  min-height: 610px; /* Adjust based on your content to ensure uniform size */
-  max-height: 610px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3%;
-}
-
-.custom-card-img-top {
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
-  border: 15px solid white;
-  /* border-radius: 35px; */
-}
-
-.card-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-}
-
-
-
-/* About Page */
-.AboutPage {
-  position: relative;
-  overflow: hidden;
-  /* height: 100vh;  */
-  width: 100vw; 
-  z-index: 1; 
-}
-
-.background-blur {
-  position: absolute; /* Absolute position to stay behind the content */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-image: url(https://scubapro.johnsonoutdoors.com/sites/default/files/2022-09/puerto-rico-20210721.jpg); /* Your background image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(5px); /* The blur effect */
-  z-index: -1; /* Keeps the background behind the content */
-}
-
-.content-about {
-  position: relative; /* Needed to lift the content above the background */
-  z-index: 1; /* Higher index to be above the pseudo-element */
-  font-family: sans-serif;
-}
-
-.text-center {
-  z-index: 1;
-}
-
-.card.about-card {
-  min-height: 70px; /* Adjust based on your content to ensure uniform size */
-  width: 35vh;
-  display: center;
-  border-radius: 15px; /* Adjust as needed for roundness */
-  overflow: hidden; /* Ensures the blur doesn't leak outside the border */
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Extra blurriness inside the card */
-}
-
-.main-image {
-  width: 150px; 
-  height: 150px; 
-  object-fit: cover;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.bg-custom {
-  background-color: #a7e351; /* Example: bright yellow background as in your sample image */
-}
-
-.small-image-container {
-  margin-top: 10px; /* Spacing above the small images */
-}
-
-.small-image {
-  width: 30px;
-  height: 30px; 
-  margin: 0 5px; /* Spacing between small images */
-}
-
-
-
-
-
 /* boton de navbar */
-
-
-a1 {
+.a1 {
   border-bottom: 1px solid;
   color: white;
   line-height: 1.4;
@@ -351,6 +134,205 @@ letter-spacing: 5px;
 }
 
 
+
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f29d46;
+  padding: 5px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin-left: 250px;
+  text-align: center; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  flex: 1; 
+  color: white;
+}
+
+.footer img {
+  max-width: 45px; 
+  height: auto;
+  float: right; 
+}
+
+.footer p {
+  margin-left: 250px; 
+  text-align: center; 
+  flex: 1; 
+  color: white;
+}
+
+/* esto hace que el footer se quede */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1; 
+}
+
+
+/* HOME PAGE */
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* to fill the viewport */
+}
+
+.page-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  filter: blur(6px);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f29d46; 
+  font-size: 6em; 
+  z-index: 1; 
+}
+
+.content {
+  padding: 100px;
+  background-color: #32e7c8;
+}
+
+.content h1 {
+  font-size: 50px;
+}
+
+/* for content below the image Home */
+.content p { 
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  margin-top: 3%;
+}
+
+/* for p under h1: Coqui Compass */
+.centered-text {
+  position: absolute;
+  top: 60%; /* to position below the h1 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; 
+  text-align: center; 
+  color: white; 
+  font-size: 1.4rem; 
+}
+
+.ojuju-custom {
+  font-family: 'Ojuju', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Example weight, can adjust */
+}
+
+
+/* HOME PAGE CARDS */
+.custom-card {
+  min-height: 610px; /* Adjust based on your content to ensure uniform size */
+  max-height: 610px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+
+.custom-card-img-top {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border: 15px solid white;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* About Page */
+.AboutPage {
+  position: relative;
+  overflow: hidden;
+  width: 100vw; 
+  z-index: 1; 
+}
+
+.background-blur {
+  position: absolute; /* to stay behind the content */
+  top: 0;
+  left: 0;
+  width: 100%; 
+  min-height: 100vh;
+  background-image: url(https://scubapro.johnsonoutdoors.com/sites/default/files/2022-09/puerto-rico-20210721.jpg); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); 
+  z-index: -1; 
+}
+
+.content-about {
+  position: relative; 
+  z-index: 1;
+  font-family: sans-serif;
+}
+
+.text-center {
+  z-index: 1;
+}
+
+.card.about-card {
+  min-height: 70px; /* Adjust based on your content to ensure uniform size */
+  width: 35vh;
+  display: center;
+  border-radius: 15px; /* Adjust as needed for roundness */
+  overflow: hidden; /* Ensures the blur doesn't leak outside the border */
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Extra blurriness inside the card */
+}
+
+.main-image {
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bg-custom {
+  background-color: #a7e351; /* Example: bright yellow background as in your sample image */
+}
+
+.small-image-container {
+  margin-top: 10px; /* Spacing above the small images */
+}
+
+.small-image {
+  width: 30px;
+  height: 30px; 
+  margin: 0 5px; /* Spacing between small images */
+}
+
+
+
 /* Dashboard + PlanCard: Donde se ve la lista de los Pueblos  */
 .plan-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -381,4 +363,40 @@ letter-spacing: 5px;
   object-fit: cover; /* Cover the frame without distorting aspect ratio */
   flex: auto; /* Do not grow or shrink, use margin auto */
 }
+
+
+/* BTN de MyItineraries */
+.itinerary-btn:hover{
+  background-color: #a7e351 !important;
+}
+
+
+/* BACKGROUND de ItineraryDetails and MyItineraries */
+.blurry-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://i.pinimg.com/originals/5e/7e/05/5e7e0561c4f70f1f9bf3dbe829a3673e.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); 
+  z-index: -1; 
+}
+
+/* MyItineraries */
+.blurry-background2{
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://e0.pxfuel.com/wallpapers/72/275/desktop-wallpaper-old-san-juan-thumbnail.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); 
+  z-index: -1; 
+}
+
 

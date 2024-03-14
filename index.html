@@ -12,9 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap" rel="stylesheet">
 
   </head>
+
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- no borrar, este div hace que el footer siempre se quede abajo-->
+    <div class="content-wrap">
+      <script type="module" src="/src/main.jsx">
+      </script>
+    </div> 
   </body>
+
+  <footer class="footer">
+    <p>Made with 💙 by Roxangélica Rolán and Naiomy Figueroa</p>
+      <a href='https://github.com/rrolanbaez/module2-client' target="_blank" className='footer-img' rel="noopener noreferrer">      
+       <img src="src/images/github-mark.svg"/>
+      </a>
+  </footer>
   
 </html>
